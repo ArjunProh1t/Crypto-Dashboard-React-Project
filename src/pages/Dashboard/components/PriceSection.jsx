@@ -32,11 +32,16 @@ const PriceSection = () => {
                         leftIcon={<Icon as={AiFillMinusCircle} />}>Sell</Button>
                 </HStack>
             </Flex>
-            <Tabs variant='soft-rounded' colorScheme='green'>
+            <Tabs variant='soft-rounded'>
                 <Flex justify="end">
-                    <TabList>
-                        <Tab>Tab 1</Tab>
-                        <Tab>Tab 2</Tab>
+                    <TabList bg="black.5" gap="7px" p="3px">
+                        {
+                            ["1H", "1D", "1W", "1M"].map((tab, index) => (
+                                <Tab _selected={{
+                                    bg: "white",
+                                }} key={ tab } fontSize="sm" p="2" borderRadius="4" > { tab }</Tab>
+                            ))
+                        }
                     </TabList>
                 </Flex>
                 <TabPanels>
